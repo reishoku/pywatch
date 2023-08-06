@@ -11,21 +11,6 @@ def clear() -> None:
     return print('\033[H\033[J')
 
 
-def interval(n) -> int:
-
-    if not isinstance(n, int):
-        raise ValueError
-
-    try:
-        _n: int = int(n)
-    except ValueError:
-        return False
-    except Exception:
-        return False
-
-    return _n if _n > 0 else 1  # 1: default interval
-
-
 def main(cmd: list, interval: int, clearscreen: bool, showtime: bool) -> None:
     if not isinstance(cmd, list):
         raise TypeError
